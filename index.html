@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OpenPose-like Web Demo (MoveNet)</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; display:flex; flex-direction:column; align-items:center; }
+    #container { position: relative; width: 720px; max-width: 100%; }
+    video, canvas { width: 100%; height: auto; display:block; }
+    #controls { margin: 10px 0; }
+    button { padding: 8px 12px; margin-right:8px; }
+    #status { margin-left:8px; color:#555; }
+  </style>
+</head>
+<body>
+  <h2>OpenPose-like Web Demo (MoveNet)</h2>
+  <div id="container">
+    <video id="video" playsinline autoplay muted></video>
+    <canvas id="overlay"></canvas>
+  </div>
+  <div id="controls">
+    <button id="startBtn">开始摄像头</button>
+    <button id="stopBtn" disabled>停止</button>
+    <label><input id="flip" type="checkbox" /> 镜像翻转（用于自拍）</label>
+    <span id="status">状态：未启动</span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.21.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection@0.0.7/dist/pose-detection.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
